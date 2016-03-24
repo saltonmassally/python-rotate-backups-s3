@@ -1,0 +1,15 @@
+sudo: false
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "pypy"
+install:
+  - pip install coveralls
+  - LC_ALL=C pip install .
+script:
+  - make check
+  - make test
+after_success:
+  - coveralls
