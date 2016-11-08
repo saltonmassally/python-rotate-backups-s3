@@ -182,7 +182,7 @@ class S3RotateBackups(RotateBackups):
                 else:
                     backups.append(S3Backup(
                         pathname=entry,
-                        datetime=datetime.datetime(*(int(group, 10) for group in match.groups('0'))),
+                        timestamp=datetime.datetime(*(int(group, 10) for group in match.groups('0'))),
                     ))
             else:
                 logger.debug("Failed to match time stamp in filename: %s", entry)
