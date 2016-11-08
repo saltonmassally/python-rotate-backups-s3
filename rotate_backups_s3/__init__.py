@@ -33,7 +33,7 @@ import boto
 from rotate_backups import Backup, RotateBackups, TIMESTAMP_PATTERN
 
 # Semi-standard module versioning.
-__version__ = '0.1'
+__version__ = '0.2'
 
 # Initialize a logger for this module.
 logger = logging.getLogger(__name__)
