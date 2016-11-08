@@ -57,7 +57,7 @@ setup(name='rotate-backups-s3',
           'rotate-backups-s3 = rotate_backups_s3.cli:main'
       ]),
       install_requires=[
-          'rotate-backups',
+          'rotate-backups==4.3',
           'boto',
       ],
       classifiers=[
