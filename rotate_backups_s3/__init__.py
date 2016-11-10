@@ -33,7 +33,7 @@ import boto
 from rotate_backups import Backup, RotateBackups, TIMESTAMP_PATTERN
 
 # Semi-standard module versioning.
-__version__ = '0.2'
+__version__ = '0.3'
 
 # Initialize a logger for this module.
 logger = logging.getLogger(__name__)
@@ -134,7 +134,7 @@ class S3RotateBackups(RotateBackups):
         # Group the backups by the rotation frequencies.
         backups_by_frequency = self.group_backups(sorted_backups)
         # Apply the user defined rotation scheme.
-        self.apply_rotation_scheme(backups_by_frequency, most_recent_backup.datetime)
+        self.apply_rotation_scheme(backups_by_frequency, most_recent_backup.timestamp)
         # Find which backups to preserve and why.
         backups_to_preserve = self.find_preservation_criteria(backups_by_frequency)
         # Apply the calculated rotation scheme.
